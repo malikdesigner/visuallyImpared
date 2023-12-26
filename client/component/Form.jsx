@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ToastAndroid, Platform, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { CheckBox } from 'react-native-elements';
-import * as DocumentPicker from 'expo-document-picker';
-import * as FileSystem from 'expo-file-system';
 
 import apiUrl from './apiUrl';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -34,35 +31,7 @@ const Form = () => {
             ToastAndroid.WHITE
         );
     };
-    // const handleFilePick = async (fileType) => {
-    //     try {
-    //         const result = await DocumentPicker.getDocumentAsync({
-    //             type: fileType,
-    //         });
-    //         console.log(result)
 
-    //         if (result.type === 'success') {
-    //             const fileName = result.name;
-
-    //             // Define fileUri here
-    //             const fileUri = Platform.OS === 'ios' ? result.uri.replace('file://', '') : result.uri;
-
-    //             // Update the file path to save in the local directory
-    //             const newPath = `${localDirectory}${fileName}`;
-
-    //             // Copy the file to the local directory
-    //             await FileSystem.copyAsync({ from: fileUri, to: newPath });
-
-    //             if (fileType === 'audio/*') {
-    //                 setAudio(newPath);
-    //             } else if (fileType === 'application/pdf' || fileType === 'application/msword') {
-    //                 setBookFile(newPath);
-    //             }
-    //         }
-    //     } catch (error) {
-    //         console.error('Error picking file:', error);
-    //     }
-    // };
 
 
     const handleSubmit = async () => {

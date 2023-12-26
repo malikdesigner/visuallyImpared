@@ -1,10 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { View, Text, TouchableOpacity, TextInput, Linking, ToastAndroid, StyleSheet } from 'react-native';
-import { WebView } from 'react-native-webview';
-import Video from 'react-native-video';
-import PDFViewer from './PdfViewer';
-import axios from 'axios';
-import apiUrl from './apiUrl';
 import * as Speech from 'expo-speech';
 import { useNavigation } from '@react-navigation/native';
 const Feedback = ({ route }) => {
@@ -27,8 +22,8 @@ const Feedback = ({ route }) => {
         else if (language == 'english') {
             await speakButtonName('Going back');
         }
-        else if (language == 'espanol') {
-            await speakButtonName('Volver');
+        else if (language == 'tamil') {
+            await speakButtonName('Tirumpi celkiṟēṉ');
         }
         navigation.navigate('MainScreen');
     };
@@ -41,8 +36,8 @@ const Feedback = ({ route }) => {
         else if (language == 'english') {
             await speakButtonName('Feedback send successfully');
         }
-        else if (language == 'espanol') {
-            await speakButtonName('Comentarios enviados correctamente');
+        else if (language == 'tamil') {
+            await speakButtonName('Karuttu veṟṟikaramāka aṉuppappaṭṭatu');
         }
         ToastAndroid.show('Feedback send successfully', ToastAndroid.SHORT);
         navigation.navigate('MainScreen');
@@ -66,10 +61,10 @@ const Feedback = ({ route }) => {
                     }}
                 />
             </View>
-            <TouchableOpacity style={[styles.button,{marginTop: 100}]} onPress={handleSubmit}>
+            <TouchableOpacity style={[styles.button, { marginTop: 100 }]} onPress={handleSubmit}>
                 <Text style={styles.buttonText}>Submit</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={[styles.button,{marginTop: 10}]} onPress={handleBack}>
+            <TouchableOpacity style={[styles.button, { marginTop: 10 }]} onPress={handleBack}>
                 <Text style={styles.buttonText}>Back</Text>
             </TouchableOpacity>
         </View>
@@ -79,14 +74,13 @@ const styles = StyleSheet.create({
     button: {
         width: '80%',
         height: 40,
-        backgroundColor: '#fff',
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 5,
         backgroundColor: 'darkslategrey',
         color: 'white',
         marginLeft: 30,
-        
+
 
     },
     buttonText: {

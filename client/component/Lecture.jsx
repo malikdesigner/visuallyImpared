@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Linking, StyleSheet } from 'react-native';
-import { WebView } from 'react-native-webview';
-import Video from 'react-native-video';
-import PDFViewer from './PdfViewer';
+
 import axios from 'axios';
 import apiUrl from './apiUrl';
 import * as Speech from 'expo-speech';
@@ -51,8 +49,8 @@ const Lecture = ({ route }) => {
         else if (language == 'english') {
             await speakButtonName('Going back');
         }
-        else if (language == 'espanol') {
-            await speakButtonName('Volver');
+        else if (language == 'tamil') {
+            await speakButtonName('Tirumpi celkiṟēṉ');
         }
         navigation.navigate('MainScreen');
     };
